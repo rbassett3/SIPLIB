@@ -16,4 +16,4 @@ Navigation is awkward because github doesn't display html by default, but clonin
 S. Ahmed, R. Garcia, N. Kong, L. Ntaimo, G. Parija, F. Qiu, S. Sen. SIPLIB: A Stochastic Integer Programming Test Problem Library. https://www2.isye.gatech.edu/~sahmed/siplib, 2015. 
 ```
 
-- **More Information on Prof. Ahmed**. Prof. Ahmed passed away on June 19, 2019. An "In Memoriam" page can be accessed [here](https://www.isye.gatech.edu/news/memoriam-shabbir-ahmed) or [here](https://web.archive.org/web/20250212211934/https://www.isye.gatech.edu/news/memoriam-shabbir-ahmed) via Internet Archive if the original is ever deleted.
+- **More Information on Prof. Ahmed**. Prof. Ahmed passed away on June 19, 2019. An "In Memoriam" page can be accessed [here](https://www.isye.gatech.edu/news/memoriam-shabbir-ahmed) (or [here](https://web.archive.org/web/20250212211934/https://www.isye.gatech.edu/news/memoriam-shabbir-ahmed) via Internet Archive if the original is ever deleted).
