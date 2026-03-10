@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>The SSLP Test Problems</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1>The SSLP Test Problems</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><b>Contributed by <i><a
+ href="http://ie.tamu.edu/people/faculty/Ntaimo/default.htm">Lewis Ntaimo</a></i>
+and <i><a href="http://www.sie.arizona.edu/faculty/sen/index.html">Suvrajeet
+Sen</a></i></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">The test problem suite consists
+of data and computational results for 12 two-stage stochastic mixed-integer
+programs arising in stochastic server location problems (SSLPs). The problem
+formulation and instance generation are described in [1, 2]. The problems have
+pure binary first-stage variables, mixed-binary second-stage variables, and
+discrete distributions.</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">The following table presents the
+sizes of the deterministic equivalent and subproblem for each of the 12
+problems instances. The instances are named SSLP<i>m.n.s</i>, where <i>m</i> is
+the number of potential server locations, <i>n</i> is the number of potential
+clients, and <i>s</i> is the number of 
+scenarios.&nbsp; Constrs, Bins, Cvars and Dens refer to the number of 
+constraints, binary variables, continuous variables, and density of the 
+constraint matrix, respectively.&nbsp; The data for the each problem is given as 
+three text files in SMPS format (TIME, CORE, and STOCH files). The SMPS data 
+files are contained in the zip file <A 
+href="sslp.zip">sslp.zip</A>          
+          
+           
+             .</p>
+<P class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</P>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify"> </p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify"><b>Table 1:&nbsp; Dimensions for the
+SSLP Instances</b></p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify"><IMG height=220 src="sslp_files/image001.gif"
+ width=575 border=0 ></p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">Computational results using an
+implementation of the D<sup>2</sup> algorithm [3] on a Sun 280R with UltraSPARC-III+
+CPU running at 900 MHz are given in Table 2. The CPLEX 7.0 Callable Library [4]
+was used for solving the master and subproblems. To solve the large-scale SSLP
+DEP formulation for each of the problem instances the CPLEX MIP solver
+parameters were set at the following values: ``set mip emphasis 1"
+(emphasizes looking for feasible solutions), ``set mip strategy start 4"
+(uses barrier at the root), and&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ``branching priority order on <i>x</i>
+(first-stage decision variables -- first branches on any fractional component
+of <i>x</i> before branching on <i>y</i> – second-stage decision variables). A 
+CPU time limit of 10,800 seconds (3 hrs) was imposed and any problem instance
+run taking more than this time limit was stopped and the percent gap from
+optimality reported. All the problems that took less than this time limit
+converged to an optimal solution and the percentage gap between the lower bound
+and the upper bound was equal to 0%.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify"><b>Table 2: Computational Results
+for SSLP using the D<sup>2</sup> Algorithm</b></p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify"><IMG height=196 src="sslp_files/image002.gif"
+ width=576 border=0 ></p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">[1] Ntaimo, L. and S. Sen, “The
+‘million-variable’ march for stochastic combinatorial optimization,” <i>Journal
+of Global Optimization</i>, to appear, 2004.</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">[2] Ntaimo, L. <i>Decomposition
+algorithms for stochastic combinatorial optimization: Computational experiments
+and extensions</i>, Ph.D. Dissertation, University of Arizona, 2004.</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">[3] Sen, S. and J.L. Higle, “The
+C<sup>3</sup> Theorem and a D<sup>2</sup> Algorithm for Large Scale Stochastic
+Mixed-Integer Programming: Set Convexification,” <i>Mathematical Programming</i>,
+to appear, 2004.</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+
+<p class=MsoNormal style="TEXT-ALIGN: justify">[4] ILOG CPLEX, <i>CPLEX 7.0
+Users Manual and Reference Manual</i>, ILOG CPLEX Division, Incline Village, NV, 2000.</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+</head>
+<body>
+
+<h1>
+The SEMI Test Problems</h1>
+
+<h3>
+<b>Contributed by: <a href="mailto:parija@us.ibm.com">Gyana Parija</a></b></h3>
+
+<hr SIZE=1 NOSHADE WIDTH="100%">
+<p>The SEMI test problem suite consists of 3 instances of a two-stage multi-period
+stochastic integer program arising in the planning of semiconductor tool
+purchases. The problem formulation is described in <a href="#[1]">[1]</a>.
+The instances have mixed-integer first-stage variables and continuous second-stage
+variables.
+<p><b>DATA:</b>
+<p>The SMPS data for the three problem instances are contained in the zip
+file <a href="semi.ZIP">semi.ZIP</a>.
+The zip file includes 1 core and 1 time file, and 3 stoch files corresponding
+to three scenario numbers (2,3,and 4). The size of the deterministic equivalent
+problem for three instances are tabulated below.
+<pre><u>________________________________________</u></pre>
+
+<pre><u>Problem&nbsp;&nbsp;&nbsp; Scen&nbsp;&nbsp;&nbsp; Cols&nbsp;&nbsp;&nbsp;&nbsp; Int&nbsp;&nbsp;&nbsp;&nbsp; Rows</u></pre>
+
+<pre>SEMI2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2&nbsp;&nbsp;&nbsp;&nbsp; 20216&nbsp;&nbsp;&nbsp; 612&nbsp;&nbsp;&nbsp; 11686</pre>
+
+<pre>SEMI3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3&nbsp;&nbsp;&nbsp;&nbsp; 30018&nbsp;&nbsp;&nbsp; 612&nbsp;&nbsp;&nbsp; 17528</pre>
+
+<pre><u>SEMI4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4&nbsp;&nbsp;&nbsp;&nbsp; 39820&nbsp;&nbsp;&nbsp; 612&nbsp;&nbsp;&nbsp; 23370</u></pre>
+
+<p><br><b>SOLUTION:</b>
+<p>The following table presents the upper and lower bounds obtained using
+IBM OSLSE on an IBM Thinkpad Model 770 (with 233 MHz speed
+<br>and 256 MB RAM) running Windows NT 4.0.
+<p>__________________________________________________________________________
+<pre><u>Problem&nbsp;&nbsp;&nbsp; UB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % Gap&nbsp;&nbsp;&nbsp;&nbsp; CPUs&nbsp;&nbsp;&nbsp;&nbsp; Nodes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Iter</u></pre>
+
+<pre>SEMI2&nbsp;&nbsp;&nbsp; 1545.5&nbsp;&nbsp;&nbsp; 1457.1&nbsp;&nbsp;&nbsp;&nbsp; 6.1&nbsp;&nbsp;&nbsp;&nbsp; 2,164&nbsp;&nbsp;&nbsp;&nbsp; 7,153&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 93,118</pre>
+
+<pre>SEMI3&nbsp;&nbsp;&nbsp; 1808.1&nbsp;&nbsp;&nbsp; 1745.4&nbsp;&nbsp;&nbsp;&nbsp; 3.6&nbsp;&nbsp;&nbsp;&nbsp; 8,914&nbsp;&nbsp;&nbsp; 28,410&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 383,787</pre>
+
+<pre><u>SEMI4&nbsp;&nbsp;&nbsp; 2197.2&nbsp;&nbsp;&nbsp; 2148.4&nbsp;&nbsp;&nbsp;&nbsp; 2.3&nbsp;&nbsp;&nbsp; 27,519&nbsp;&nbsp;&nbsp; 61,192&nbsp;&nbsp;&nbsp; 1,125,986</u></pre>
+
+<p><br><b>REFERENCES:</b>
+<p><a NAME="[1]"></a>[1] F. Barahona, S. Bermon, O. Gunluk,&nbsp; and S.
+Hood. "<a href="http://www.optimization-online.org/DB_HTML/2001/10/379.html">Robust
+Capacity Planning in Semiconductor Manufacturing</a>," IBM Research Report
+RC22196, 2001.
+<br>
+<hr SIZE=1 NOSHADE WIDTH="100%">
+<br>[<a href="../../siplib">SIPLIB HOME</a>]
+</body>
+</html>

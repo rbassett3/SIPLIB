@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 11 (filtered)">
+<title>The mpTSPs Test Problems</title>
+
+<style>
+<!--
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman";}
+h1
+	{margin:0in;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Times New Roman";}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+@page Section1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.25in 1.0in 1.25in;}
+div.Section1
+	{page:Section1;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=Section1>
+
+<h1>The mpTSPs Test Problems</h1>
+
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><b>Contributed by <i><a
+ href="http://www.dauin.polito.it/it/personale/scheda/(nominativo)/luca.gobbato">Luca Gobbato</a></i>, 
+ <i><a href="http://staff.polito.it/guido.perboli/index.html">Guido Perboli</a></i>
+  and  <i><a href="http://www.matapp.unimib.it/~maggioni/">Francesca Maggioni</a></i></b></p>
+
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">The test problem suite consists of data and computational results for 5 two-stage stochastic mixed-integer programs arising in City Logistics contexts. 
+More precisely, given a graph characterized by a set on nodes connected by arcs, in the mpTSPs we consider that, for every pair of nodes, we have multiple paths between the two nodes. 
+Each path is characterized by a random travel time which can be decomposed in the sum of a deterministic term and a stochastic term, which represents the travel time oscillation due to the path congestion.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">The problem formulation is described in [1, 2], while the instance generation is reported in [2].
+The problems have pure binary first-stage and second-stage variables. 
+All possible discrete values that the random variable can assume, are represented by a set of 100 scenarios and are assumed to be exogenous to the problem.
+The data files are contained in the zipped folder <A href="MPTSPs.zip"> MPTSPs.zip</A>. 
+The format is described in Format_Instance.txt contained in the data folder.</p>
+
+<h3>Instances</h3>
+<p class=MsoNormal style="TEXT-ALIGN: justify">The following table presents the instance set. 
+The instances are named MPTSPs_D<i>d</i>_<i>n</i>, where <i>d</i> is the number of potential server locations, <i>n</i> is the nodes distribution strategies [2] and <i>n</i> is the potential number of customers.</p>
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify"><b>Table 1:&nbsp; Instance set</b></p>
+<table border="1" style="width:50%; border-collapse: collapse;">
+<tr>	<th>Name</th>	<th>Node distribution</th>	<th>Customers</th>	<th>Scenarios</th></tr>
+<tr align="center">    <td>MPTSPs_D0_50</td>    <td>City center</td>     <td>54</td>  <td>100</td></tr>
+<tr align="center">    <td>MPTSPs_D1_50</td>    <td>Suburban area</td>     <td>55</td>    <td>100</td></tr>
+<tr align="center">    <td>MPTSPs_D2_50</td>    <td>City center and Suburban area (3:1)</td>     <td>56</td>    <td>100</td></tr>
+<tr align="center">    <td>MPTSPs_D3_50</td>    <td>City center and Suburban area (1:1)</td>     <td>56</td>    <td>100</td></tr>
+<tr align="center">    <td>MPTSPs_D1_100</td>   <td>Suburban area</td>     <td>105</td>    <td>100</td></tr>
+</table>
+
+<h3>Results</h3>
+<p class=MsoNormal style="TEXT-ALIGN: justify">Computational results are given in Table 2. The CPLEX 12.5 was used for solving the stochastic problems to optimality. 
+For each instance we solved:</p>
+<ul>
+  <li>Recourse Problem (RP)</li>
+  <li>Expected result of Expected Value Problem (EEV)</li>
+  <li>Generalized Loss Using the Skeleton Solution (GLUSS) [4] </li>
+</ul>
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify"><b>Table 2: Computational Results</b></p>
+<table border="1" style="width:50%; border-collapse: collapse;">
+<tr>	<th>Name</th>	<th>RP</th>	<th>EEV</th>	<th>GLUSS 25%</th> <th>GLUSS 50%</th> <th>GLUSS 75%</th> <th>GLUSS 100%</th></tr>
+<tr align="center">    <td>MPTSPs_D0_50</td>    <td>23544.2</td> <td>24537.3</td> <td>23544.2</td> <td>24064.1</td> <td>24278.4</td> <td>24537.3</td> </tr>
+<tr align="center">    <td>MPTSPs_D1_50</td>    <td>15250.7</td> <td>15964.3</td> <td>15250.7</td> <td>15250.7</td> <td>15821.8</td> <td>15964.3</td> </tr>
+<tr align="center">    <td>MPTSPs_D2_50</td>    <td>16509.8</td> <td>16836.3</td> <td>16509.8</td> <td>16509.8</td> <td>16631.5</td> <td>16836.3</td> </tr>
+<tr align="center">    <td>MPTSPs_D3_50</td>    <td>11898.7</td> <td>12173.4</td> <td>11898.7</td> <td>11972.5</td> <td>12090.1</td> <td>12173.4</td> </tr>
+<tr align="center">    <td>MPTSPs_D1_100</td>   <td>22094</td> <td>22855.6</td> <td>22094</td> <td>22094</td> <td>22119.7</td> <td>22855.6</td> </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">The complete solutions are included in the zipped folder containing data files.</p>
+
+<h3>References</h3>
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">[1] Roberto Tadei, Guido Perboli, Francesca Perfetti, The multi-path Traveling Salesman Problem with stochastic travel costs, <i>EURO Journal on Transportation and Logistics</i>, 2014</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">[2] Guido Perboli, Luca Gobbato, Francesca Maggioni, A Progressive Hedging method for the multi-path Traveling Salesman Problem with stochastic travel times, submitted to <i>Journal of Management Mathematics</i>, 2014</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">[3] Francesca Maggioni, Stein W. Wallace, Analyzing the quality of the expected value solution in stochastic programming, <i>Annals of Operations Research</i>, 2010</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">&nbsp;</p>
+<p class=MsoNormal style="TEXT-ALIGN: justify">[3] Francesca Maggioni, Guido Perboli, Generalized skeleton solution in two-stage stochastic programming, in preparation</p>
+</div>
+
+</body>
+
+</html>

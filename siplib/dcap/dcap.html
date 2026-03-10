@@ -1,0 +1,89 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.76 [en] (Windows NT 5.0; U) [Netscape]">
+   <meta name="Author" content="Shabbir Ahmed">
+   <meta name="KeyWords" content="stochastic integer programming, test problems">
+   <title>The DCAP Test Problems</title>
+</head>
+<body>
+
+<h1>
+The DCAP Test Problems</h1>
+
+<h3>
+Contributed by: <a href="mailto:rgarcia@isye.gatech.edu">Renan Garcia</a></h3>
+
+<hr NOSHADE WIDTH="100%">
+<p>This test problem suite consists of data and computational results for
+12 two-stage stochastic integer programs arising in dynamic capacity acquisition
+and allocation applications. The problem formulation is described in <a href="#[1]">[1]</a>.
+The problems have mixed-integer first-stage variables, pure binary second-stage
+variables, and discrete distributions.
+<p><b>DATA:</b>
+<p>The following table presents the sizes of the deterministic equivalents
+for each of the 12 problems instances and links to the data files. Columns
+NS, Rows, Cols, Bins, and Nonz refers to the number of scenarios, rows,
+columns, binary variables, and non-zero elements respectively.&nbsp; The
+data for the problems is organized into 4&nbsp; zipped files. Each file
+includes <a href="http://ttg.sba.dal.ca/sba/profs/hgassmann/smps.html">SMPS</a>
+data for three problem instances corresponding to three scenario numbers
+(200,300,500). The core files are provided in both MPS as well as the CPLEX
+LP format (.lp extension).
+<p>____________________________________________________________________________
+<pre>Name&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>&nbsp;&nbsp;&nbsp; Size of the Det. Eq.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>&nbsp;&nbsp;&nbsp;&nbsp; Data
+<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Rows&nbsp;&nbsp;&nbsp; Cols&nbsp;&nbsp;&nbsp; Bins&nbsp;&nbsp;&nbsp; Nonz&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</u>dcap233_200&nbsp;&nbsp;&nbsp;&nbsp; 200&nbsp;&nbsp;&nbsp;&nbsp; 3012&nbsp;&nbsp;&nbsp; 5418&nbsp;&nbsp;&nbsp; 5406&nbsp;&nbsp;&nbsp; 10230&nbsp;&nbsp;&nbsp;
+dcap233_300&nbsp;&nbsp;&nbsp;&nbsp; 300&nbsp;&nbsp;&nbsp;&nbsp; 4512&nbsp;&nbsp;&nbsp; 8118&nbsp;&nbsp;&nbsp; 8106&nbsp;&nbsp;&nbsp; 15330&nbsp;&nbsp; <a href="dcap233.zip">dcap233.zip
+</a><u>dcap233_500&nbsp;&nbsp;&nbsp;&nbsp; 500&nbsp;&nbsp;&nbsp;&nbsp; 7512&nbsp;&nbsp;&nbsp; 13518&nbsp;&nbsp; 13506&nbsp;&nbsp; 25530&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</u>dcap243_200&nbsp;&nbsp;&nbsp;&nbsp; 200&nbsp;&nbsp;&nbsp;&nbsp; 3612&nbsp;&nbsp;&nbsp; 7218&nbsp;&nbsp;&nbsp; 7206&nbsp;&nbsp;&nbsp; 13230&nbsp;&nbsp;&nbsp;
+dcap243_300&nbsp;&nbsp;&nbsp;&nbsp; 300&nbsp;&nbsp;&nbsp;&nbsp; 5412&nbsp;&nbsp;&nbsp; 10818&nbsp;&nbsp; 10806&nbsp;&nbsp; 19830&nbsp;&nbsp; <a href="dcap243.zip">dcap243.zip
+</a><u>dcap243_500&nbsp;&nbsp;&nbsp;&nbsp; 500&nbsp;&nbsp;&nbsp;&nbsp; 9012&nbsp;&nbsp;&nbsp; 18018&nbsp;&nbsp; 18006&nbsp;&nbsp; 33030&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>&nbsp;&nbsp;
+dcap332_200&nbsp;&nbsp;&nbsp;&nbsp; 200&nbsp;&nbsp;&nbsp;&nbsp; 2412&nbsp;&nbsp;&nbsp; 4818&nbsp;&nbsp;&nbsp; 4806&nbsp;&nbsp;&nbsp; 9627&nbsp;&nbsp;&nbsp;&nbsp;
+dcap332_300&nbsp;&nbsp;&nbsp;&nbsp; 300&nbsp;&nbsp;&nbsp;&nbsp; 3612&nbsp;&nbsp;&nbsp; 7218&nbsp;&nbsp;&nbsp; 7206&nbsp;&nbsp;&nbsp; 14427&nbsp;&nbsp; <a href="dcap332.zip">dcap332.zip
+</a><u>dcap332_500&nbsp;&nbsp;&nbsp;&nbsp; 500&nbsp;&nbsp;&nbsp;&nbsp; 6012&nbsp;&nbsp;&nbsp; 12018&nbsp;&nbsp; 12006&nbsp;&nbsp; 24027&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</u>&nbsp;&nbsp;
+
+dcap342_200&nbsp;&nbsp;&nbsp;&nbsp; 200&nbsp;&nbsp;&nbsp;&nbsp; 2812&nbsp;&nbsp;&nbsp; 6418&nbsp;&nbsp;&nbsp; 6406&nbsp;&nbsp;&nbsp; 12427&nbsp;&nbsp;&nbsp;
+dcap342_300&nbsp;&nbsp;&nbsp;&nbsp; 300&nbsp;&nbsp;&nbsp;&nbsp; 4212&nbsp;&nbsp;&nbsp; 9618&nbsp;&nbsp;&nbsp; 9606&nbsp;&nbsp;&nbsp; 18627&nbsp;&nbsp; <a href="dcap342.zip">dcap342.zip
+</a><u>dcap342_500&nbsp;&nbsp;&nbsp;&nbsp; 500&nbsp;&nbsp;&nbsp;&nbsp; 7012&nbsp;&nbsp;&nbsp; 16018&nbsp;&nbsp; 16006&nbsp;&nbsp; 31027______________</u></pre>
+<b>SOLUTION:</b>
+<p>The following table presents the best known upper and lower bounds obtained
+with a specialized decomposition based branch &amp; bound (DBB) algorithm
+(described in <a href="#[1]">[1]</a> and <a href="#[2]">[2]</a>), and that
+obtained by solving the deterministic equivalent MIP using the CPLEX 7.5
+MIP solver (with default options). A CPU time limit of 1800 secs and a
+termination tolerance of 0.01% relative optimality gap was used. The computations
+were performed on a Sun Ultra 60 workstation with 512 MB RAM and a 480MHz
+processor.
+<pre><u>____________________________________________________________________________________________________________________________</u></pre>
+
+<pre>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>DBB Algorithm</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>CPLEX 7.5</u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<u>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |&nbsp;&nbsp; Iter&nbsp;&nbsp;&nbsp; Nodes&nbsp;&nbsp; LB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % Gap&nbsp;&nbsp; CPUs&nbsp;&nbsp; |&nbsp; Iter&nbsp;&nbsp;&nbsp; Nodes&nbsp;&nbsp; LB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UB&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; % Gap&nbsp;&nbsp; CPUs&nbsp;&nbsp;&nbsp;
+</u>dcap233_200&nbsp; |&nbsp;&nbsp; 343&nbsp;&nbsp;&nbsp;&nbsp; 687&nbsp;&nbsp;&nbsp;&nbsp; 1834.868&nbsp; 1834.893&nbsp; 0.0014&nbsp; 18.15&nbsp; |&nbsp; 2263792 92397&nbsp;&nbsp; 1823.8912&nbsp; 1854.8395&nbsp; 1.6968&nbsp; 1802.68
+dcap233_300&nbsp; |&nbsp;&nbsp; 128&nbsp;&nbsp;&nbsp;&nbsp; 257&nbsp;&nbsp;&nbsp;&nbsp; 1644.342&nbsp; 1644.504&nbsp; 0.0098&nbsp; 10.25&nbsp; |&nbsp; 1476305 19222&nbsp;&nbsp; 1623.1511&nbsp; 1657.1376&nbsp; 2.0939&nbsp; 1801.00
+dcap233_500&nbsp; |&nbsp;&nbsp; 124&nbsp;&nbsp;&nbsp;&nbsp; 249&nbsp;&nbsp;&nbsp;&nbsp; 1737.719&nbsp; 1737.728&nbsp; 0.0005&nbsp; 15.89&nbsp; |&nbsp; 621088&nbsp; 36565&nbsp;&nbsp; 1712.0552&nbsp; 1748.6441&nbsp; 2.1371&nbsp; 1802.48
+dcap243_200&nbsp; |&nbsp;&nbsp; 331&nbsp;&nbsp;&nbsp;&nbsp; 663&nbsp;&nbsp;&nbsp;&nbsp; 2322.721&nbsp; 2322.721&nbsp; 0.0000&nbsp; 51.68&nbsp; |&nbsp; 468340&nbsp; 103803&nbsp; 2299.1849&nbsp; 2352.5774&nbsp; 2.3222&nbsp; 1802.95
+dcap243_300&nbsp; |&nbsp;&nbsp; 100&nbsp;&nbsp;&nbsp;&nbsp; 201&nbsp;&nbsp;&nbsp;&nbsp; 2559.297&nbsp; 2559.545&nbsp; 0.0097&nbsp; 23.48&nbsp; |&nbsp; 190918&nbsp; 73342&nbsp;&nbsp; 2541.5712&nbsp; 2640.6479&nbsp; 3.8982&nbsp; 1802.47
+dcap243_500&nbsp; |&nbsp;&nbsp; 231&nbsp;&nbsp;&nbsp;&nbsp; 463&nbsp;&nbsp;&nbsp;&nbsp; 2167.512&nbsp; 2167.512&nbsp; 0.0000&nbsp; 83.84&nbsp; |&nbsp; 420752&nbsp; 21677&nbsp;&nbsp; 2128.5289&nbsp; 2197.3689&nbsp; 3.2342&nbsp; 1801.93
+dcap332_200&nbsp; |&nbsp;&nbsp; 1754&nbsp;&nbsp;&nbsp; 3509&nbsp;&nbsp;&nbsp; 1060.676&nbsp; 1060.781&nbsp; 0.0100&nbsp; 133.34 |&nbsp; 350650&nbsp; 151932&nbsp; 1059.4573&nbsp; 1061.1722&nbsp; 0.1619&nbsp; 1802.63
+dcap332_300&nbsp; |&nbsp;&nbsp; 1270&nbsp;&nbsp;&nbsp; 2541&nbsp;&nbsp;&nbsp; 1253.040&nbsp; 1253.082&nbsp; 0.0033&nbsp; 141.32 |&nbsp; 320464&nbsp; 94357&nbsp;&nbsp; 1251.0195&nbsp; 1257.7704&nbsp; 0.5396&nbsp; 1803.20
+dcap332_500&nbsp; |&nbsp;&nbsp; 1155&nbsp;&nbsp;&nbsp; 2311&nbsp;&nbsp;&nbsp; 1588.717&nbsp; 1588.876&nbsp; 0.0100&nbsp; 199.67 |&nbsp; 765243&nbsp; 35132&nbsp;&nbsp; 1587.6687&nbsp; 1590.7464&nbsp; 0.1939&nbsp; 1801.93
+dcap342_200&nbsp; |&nbsp;&nbsp; 462&nbsp;&nbsp;&nbsp;&nbsp; 925&nbsp;&nbsp;&nbsp;&nbsp; 1619.531&nbsp; 1619.654&nbsp; 0.0076&nbsp; 131.94 |&nbsp; 390094&nbsp; 113059&nbsp; 1619.2613&nbsp; 1620.9507&nbsp; 0.1043&nbsp; 1802.62
+dcap342_300&nbsp; |&nbsp;&nbsp; 980&nbsp;&nbsp;&nbsp;&nbsp; 1961&nbsp;&nbsp;&nbsp; 2067.777&nbsp; 2067.818&nbsp; 0.0020&nbsp; 439.15 |&nbsp; 429196&nbsp; 59446&nbsp;&nbsp; 2066.9391&nbsp; 2071.3888&nbsp; 0.2153&nbsp; 1802.69
+<u>dcap342_500&nbsp; |&nbsp;&nbsp; 510&nbsp;&nbsp;&nbsp;&nbsp; 1021&nbsp;&nbsp;&nbsp; 1904.722&nbsp; 1904.803&nbsp; 0.0043&nbsp; 349.98 |&nbsp; 679448&nbsp; 14831&nbsp;&nbsp; 1903.7113&nbsp; 1913.4352&nbsp; 0.5108&nbsp; 1801.23</u></pre>
+
+<p><br><b>REFERENCES:</b>
+<p><a NAME="[1]"></a>[1] S. Ahmed and R. Garcia. "<a href="../../drauu.pdf">Dynamic
+Capacity Acquisition and Assignment under Uncertainty</a>," 
+Annals of Operations Research, vol.124, pp. 267-283, 2003. 
+<p><a NAME="[2]"></a>[2] S. Ahmed, M. Tawarmalani, and N. V. Sahinidis.
+"<a href="../../mp2000.pdf">A Finite Branch
+and Bound Algorithm for Two-stage Stochastic Integer Programs</a>,'' 
+Mathematical Programming , vol.100, pp.355-377, 2004.
+<p>
+<hr SIZE=1 NOSHADE WIDTH="100%">
+<br>[<a href="../index.html">SIPLIB
+HOME</a>]
+</body>
+</html>
